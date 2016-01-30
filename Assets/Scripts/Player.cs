@@ -20,6 +20,7 @@ public class Player : GameActor {
     float distanceDL;
     float distanceDR;
     float speed = 3f;
+    float maxGravity = 15f;
     
     bool canJump  = false;
     bool canTotem = false;
@@ -73,6 +74,10 @@ public class Player : GameActor {
         canJump  = (distanceDL <= 0.01f) || (distanceDR <= 0.01f);
         canTotem = (distanceD  <= 0.01f);
         
+    }
+    
+    public void FixedUpdate()
+    {
     }
     
     private void SetAnimation() {
