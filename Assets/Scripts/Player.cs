@@ -117,11 +117,12 @@ public class Player : GameActor {
     
     public override void MoveRight() 
     {    
-        Debug.Log("MoveRight");
-        
         if(distanceR <= 0.01f)
         {
-            speed = 0f;
+            if(hitR.collider.name != "EarthTotem(Clone)")
+            {
+                speed = 0f;
+            }
         }
         else
         {
@@ -133,11 +134,12 @@ public class Player : GameActor {
     
     public override void MoveLeft()
     {
-        Debug.Log("MoveLeft");
-        
         if(distanceL <= 0.01f)
         {
-            speed = 0f;
+            if(hitL.collider.name != "EarthTotem(Clone)")
+            {
+                speed = 0f;
+            }
         }
         else
         {
@@ -149,7 +151,6 @@ public class Player : GameActor {
     
     public override void Jump()
     {
-        Debug.Log("Jump");
         if(canJump)
         {
             rb.AddForce(new Vector2(0, 7), ForceMode2D.Impulse);
@@ -160,7 +161,6 @@ public class Player : GameActor {
 
     public override void FireTotem(Level level)
     {
-        Debug.Log("FireTotem");
         if(canTotem)
         {
             level.AddFireTotem();
@@ -169,7 +169,6 @@ public class Player : GameActor {
     
     public override void WaterTotem(Level level)
     {
-        Debug.Log("WaterTotem");
         if(canTotem)
         { 
             level.AddWaterTotem();
@@ -178,7 +177,6 @@ public class Player : GameActor {
     
     public override void EarthTotem(Level level)
     {
-        Debug.Log("EarthTotem");
         if(canTotem)
         {
             level.AddEarthTotem();
@@ -186,8 +184,7 @@ public class Player : GameActor {
     }
     
     public override void AirTotem(Level level)
-    {
-         Debug.Log("AirTotem");  
+    { 
         if(canTotem)
         {
            level.AddAirTotem();
