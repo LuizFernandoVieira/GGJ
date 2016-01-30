@@ -10,9 +10,15 @@ public class Player : GameActor {
     
     RaycastHit2D hitL;
     RaycastHit2D hitR;
+    RaycastHit2D hitD;
+    RaycastHit2D hitDL;
+    RaycastHit2D hitDR;
     
-    float distanceRight;
-    float distanceLeft;
+    float distanceL;
+    float distanceR;
+    float distanceD;
+    float distanceDL;
+    float distanceDR;
     float speed = 3f;
     
     bool canJump  = false;
@@ -21,7 +27,6 @@ public class Player : GameActor {
     public void Awake()
     {
         inputHandler = new InputHandler();
-        
         rb = GetComponent<Rigidbody2D>();
     }
     
@@ -34,21 +39,33 @@ public class Player : GameActor {
             command.Execute(this);
         }
 
-        Vector2 vectorRight = new Vector2(transform.position.x+0.17f, transform.position.y);
-        Vector2 vectorLeft  = new Vector2(transform.position.x-0.17f, transform.position.y);
+        Vector2 vectorR  = new Vector2(transform.position.x+0.17f, transform.position.y);
+        Vector2 vectorL  = new Vector2(transform.position.x-0.17f, transform.position.y);
+        Vector2 vectorD  = new Vector2(transform.position.x      , transform.position.y-0.17f);
+        Vector2 vectorDL = new Vector2(transform.position.x-0.16f, transform.position.y-0.17f);
+        Vector2 vectorDR = new Vector2(transform.position.x+0.16f, transform.position.y-0.17f);
         
-        hitR = Physics2D.Raycast(vectorRight, Vector2.right);
-        hitL = Physics2D.Raycast(vectorLeft , Vector2.left );
+        hitR = Physics2D.Raycast(vectorR  , Vector2.right);
+        hitL = Physics2D.Raycast(vectorL  , Vector2.left );
+        hitD = Physics2D.Raycast(vectorD  , Vector2.down );
+        hitDL = Physics2D.Raycast(vectorDL, Vector2.down );
+        hitDR = Physics2D.Raycast(vectorDR, Vector2.down );
             
-        distanceRight = Mathf.Abs(hitR.point.x - vectorRight.x);
-        distanceLeft  = Mathf.Abs(hitL.point.x - vectorLeft.x );            
+        distanceR  = Mathf.Abs(hitR.point.x  - vectorR.x);
+        distanceL  = Mathf.Abs(hitL.point.x  - vectorL.x);
+        distanceD  = Mathf.Abs(hitD.point.y  - vectorD.y);
+        distanceDL = Mathf.Abs(hitDL.point.y - vectorDL.y);
+        distanceDR = Mathf.Abs(hitDR.point.y - vectorDR.y);
+        
+        canJump  = (distanceDL <= 0.01f) || (distanceDR <= 0.01f);
+        canTotem = (distanceD  <= 0.01f);
     }
     
      public override void MoveRight() 
     {    
         Debug.Log("MoveRight");
         
-        if(distanceRight <= 0.01f)
+        if(distanceR <= 0.01f)
         {
             speed = 0f;
         }
@@ -64,7 +81,7 @@ public class Player : GameActor {
     {
         Debug.Log("MoveLeft");
         
-        if(distanceLeft <= 0.01f)
+        if(distanceL <= 0.01f)
         {
             speed = 0f;
         }
@@ -121,14 +138,5 @@ public class Player : GameActor {
         {
            level.AddAirTotem();
         }  
-    }
-   
-    public void OnCollisionEnter2D(Collision2D col)
-    {
-        if(col.collider.tag == "Ground")
-        {
-            canJump = true;
-            canTotem = true;
-        }
     }
 }
