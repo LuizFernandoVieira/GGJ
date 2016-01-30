@@ -26,7 +26,7 @@ public class Player : GameActor {
     
     private Animator animator;
     
-    private SpriteRenderer renderer;
+    private SpriteRenderer spriteRenderer;
     
     bool currentFacing = true;
     bool changeFacing = false;
@@ -38,7 +38,7 @@ public class Player : GameActor {
         
         animator = GetComponent<Animator>();
         
-        renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     
     public void Update()
@@ -68,12 +68,10 @@ public class Player : GameActor {
         distanceDL = Mathf.Abs(hitDL.point.y - vectorDL.y);
         distanceDR = Mathf.Abs(hitDR.point.y - vectorDR.y);
         
+        SetAnimation();
+
         canJump  = (distanceDL <= 0.01f) || (distanceDR <= 0.01f);
         canTotem = (distanceD  <= 0.01f);
-        
-        // Debug.Log("Can totem: " + canTotem);
-        
-        SetAnimation();
         
     }
     
@@ -105,9 +103,9 @@ public class Player : GameActor {
 
         if (changeFacing)
         {
-            Vector2 scale = renderer.transform.localScale;
+            Vector2 scale = spriteRenderer.transform.localScale;
             scale.x = -scale.x;
-            renderer.transform.localScale = scale;
+            spriteRenderer.transform.localScale = scale;
             changeFacing = false;
         }
     }

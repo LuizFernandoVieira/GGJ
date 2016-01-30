@@ -11,10 +11,10 @@ public class Level : MonoBehaviour {
     public GameObject earthTotem;
     public GameObject airTotem;
     
-    List<GameObject> fireTotems     = new List<GameObject>();
-    List<GameObject> waterTotems    = new List<GameObject>();
-    List<GameObject> earthTotems    = new List<GameObject>();
-    List<GameObject> airTotems      = new List<GameObject>();
+    // List<GameObject> fireTotems     = new List<GameObject>();
+    // List<GameObject> waterTotems    = new List<GameObject>();
+    // List<GameObject> earthTotems    = new List<GameObject>();
+    // List<GameObject> airTotems      = new List<GameObject>();
     
     public void Awake()
     {
@@ -35,8 +35,7 @@ public class Level : MonoBehaviour {
     {
         GameObject clone = Instantiate (fireTotem, player.transform.position, Quaternion.identity) as GameObject;
         GameObject.Destroy(clone, 5);
-        //fireTotems.Add(fireTotem);
-        
+        // fireTotems.Add(fireTotem);
     }
     
     public void AddWaterTotem()
