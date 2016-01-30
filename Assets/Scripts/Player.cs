@@ -23,11 +23,22 @@ public class Player : GameActor {
     
     bool canJump  = false;
     bool canTotem = false;
-
+    
+    private Animator animator;
+    
+    private SpriteRenderer renderer;
+    
+    bool currentFacing = true;
+    bool changeFacing = false;
+    
     public void Awake()
     {
         inputHandler = new InputHandler();
         rb = GetComponent<Rigidbody2D>();
+        
+        animator = GetComponent<Animator>();
+        
+        renderer = GetComponent<SpriteRenderer>();
     }
     
     public void Update()
@@ -59,9 +70,49 @@ public class Player : GameActor {
         
         canJump  = (distanceDL <= 0.01f) || (distanceDR <= 0.01f);
         canTotem = (distanceD  <= 0.01f);
+        
+        Debug.Log("Can totem: " + canTotem);
+        
+        SetAnimation();
+        
     }
     
-     public override void MoveRight() 
+    private void SetAnimation() {
+        int horizontal = 0;
+        
+        horizontal = (int) Input.GetAxisRaw("Horizontal");
+        
+        if (horizontal == 1)
+        {
+            animator.SetTrigger("walk");
+            if (!currentFacing) {
+                changeFacing = true;
+            }
+            currentFacing = true;
+        }
+        else if (horizontal == -1)
+        {
+            animator.SetTrigger("walk");
+            if (currentFacing) {
+                changeFacing = true;
+            }
+            currentFacing = false;
+        }
+        else
+        {
+            animator.SetTrigger("stop");
+        }
+
+        if (changeFacing)
+        {
+            Vector2 scale = renderer.transform.localScale;
+            scale.x = -scale.x;
+            renderer.transform.localScale = scale;
+            changeFacing = false;
+        }
+    }
+    
+    public override void MoveRight() 
     {    
         Debug.Log("MoveRight");
         
