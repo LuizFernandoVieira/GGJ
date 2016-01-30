@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 4fbed99b8e74840a1a803b43259ec3fd
-timeCreated: 1454178265
+guid: ca19b510e06d64245b34419644c095b6
+timeCreated: 1454178644
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: EnemyShadow_0
-    21300002: EnemyShadow_1
-    21300004: EnemyShadow_2
+    21300000: EnemySlime_0
+    21300002: EnemySlime_1
+    21300004: EnemySlime_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,60 +53,59 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: EnemyShadow_0
+    - name: EnemySlime_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 42
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -8, y: 16}
-        - {x: -16, y: 9}
-        - {x: -16, y: -2}
-        - {x: -5, y: -16}
-        - {x: 16, y: -16}
+      - - {x: -14, y: 16}
+        - {x: -20, y: 7}
+        - {x: -20, y: -9}
+        - {x: -15, y: -16}
+        - {x: 10, y: -16}
+        - {x: 16, y: -11}
         - {x: 16, y: 16}
-    - name: EnemyShadow_1
+    - name: EnemySlime_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 42
         y: 0
-        width: 32
+        width: 42
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -9, y: 16}
-        - {x: -16, y: 8}
-        - {x: -16, y: -3}
-        - {x: -6, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 10}
-        - {x: 7, y: 16}
-    - name: EnemyShadow_2
+      - - {x: -10, y: 11}
+        - {x: -21, y: 3}
+        - {x: -21, y: -16}
+        - {x: 21, y: -16}
+        - {x: 21, y: 11}
+    - name: EnemySlime_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 84
         y: 0
-        width: 32
+        width: 42
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -15, y: 16}
-        - {x: -16, y: 13}
-        - {x: -16, y: -9}
-        - {x: -11, y: -15}
-        - {x: -7, y: -16}
-        - {x: 15, y: -16}
-        - {x: 15, y: 14}
-        - {x: 14, y: 16}
+      - - {x: -16, y: 16}
+        - {x: -19, y: 12}
+        - {x: -20, y: 8}
+        - {x: -20, y: -14}
+        - {x: -13, y: -16}
+        - {x: 8, y: -16}
+        - {x: 16, y: -7}
+        - {x: 16, y: 16}
     outline: []
   spritePackingTag: 
   userData: 
