@@ -23,42 +23,42 @@ public class InputHandler {
         
         //  WALK RIGHT
         if (Input.GetKey(KeyCode.RightArrow) ||
-            Input.GetKeyDown(KeyCode.D))
+            Input.GetKey(KeyCode.D))
         {
             return move_right;
         }
         
         //  WALK LEFT
         if (Input.GetKey(KeyCode.LeftArrow) ||
-            Input.GetKeyDown(KeyCode.A))
+            Input.GetKey(KeyCode.A))
         {
             return move_left;
         }
         
         //  FIRE TOTEM
-        if (Input.GetKey(KeyCode.H) ||
-            Input.GetKey(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.H) ||
+            Input.GetKeyDown(KeyCode.Alpha1))
         {
             return fire;
         }
         
         //  WATER TOTEM
-        if (Input.GetKey(KeyCode.J) ||
-            Input.GetKey(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.J) ||
+            Input.GetKeyDown(KeyCode.Alpha2))
         {
             return water;
         }
         
         //  EARTH TOTEM
-        if (Input.GetKey(KeyCode.K) ||
-            Input.GetKey(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.K) ||
+            Input.GetKeyDown(KeyCode.Alpha3))
         {
             return earth;
         }
         
         //  AIR TOTEM
-        if (Input.GetKey(KeyCode.L) ||
-            Input.GetKey(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.L) ||
+            Input.GetKeyDown(KeyCode.Alpha4))
         {
             return air;
         }

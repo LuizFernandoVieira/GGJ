@@ -5,7 +5,7 @@ public class WaterTotemCommand : Command {
 
 	public override void Execute(GameActor ga)
     {
-        ga.WaterTotem();
+        ga.WaterTotem(level);
     }
     
 }

@@ -9,11 +9,11 @@ public abstract class GameActor : MonoBehaviour {
 
 	public abstract void Jump();
     
-    public abstract void FireTotem();
+    public abstract void FireTotem(Level level);
     
-    public abstract void WaterTotem();
+    public abstract void WaterTotem(Level level);
     
-    public abstract void EarthTotem();
+    public abstract void EarthTotem(Level level);
     
-    public abstract void AirTotem();
+    public abstract void AirTotem(Level level);
 }

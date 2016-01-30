@@ -5,7 +5,7 @@ public class AirTotemCommand : Command {
 
 	public override void Execute(GameActor ga)
     {
-        ga.AirTotem();
+        ga.AirTotem(level);
     }
     
 }
