@@ -13,28 +13,6 @@ public class InputHandler {
 
     public Command HandleInput() 
     {
-        //  JUMP
-        if (Input.GetKeyDown(KeyCode.Space) ||
-            Input.GetKeyDown(KeyCode.W) ||
-            Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            return jump;
-        }
-        
-        //  WALK RIGHT
-        if (Input.GetKey(KeyCode.RightArrow) ||
-            Input.GetKey(KeyCode.D))
-        {
-            return move_right;
-        }
-        
-        //  WALK LEFT
-        if (Input.GetKey(KeyCode.LeftArrow) ||
-            Input.GetKey(KeyCode.A))
-        {
-            return move_left;
-        }
-        
         //  FIRE TOTEM
         if (Input.GetKeyDown(KeyCode.H) ||
             Input.GetKeyDown(KeyCode.Alpha1))
@@ -61,6 +39,28 @@ public class InputHandler {
             Input.GetKeyDown(KeyCode.Alpha4))
         {
             return air;
+        }
+        
+        //  JUMP
+        if (Input.GetKeyDown(KeyCode.Space) ||
+            Input.GetKeyDown(KeyCode.W) ||
+            Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            return jump;
+        }
+        
+        //  WALK RIGHT
+        if (Input.GetKey(KeyCode.RightArrow) ||
+            Input.GetKey(KeyCode.D))
+        {
+            return move_right;
+        }
+        
+        //  WALK LEFT
+        if (Input.GetKey(KeyCode.LeftArrow) ||
+            Input.GetKey(KeyCode.A))
+        {
+            return move_left;
         }
         
         return null;

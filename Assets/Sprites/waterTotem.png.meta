@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: cf8cef93bae6449d3a3157392d34f75e
-timeCreated: 1454168431
+timeCreated: 1454174797
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -60,12 +60,12 @@ TextureImporter:
     - name: waterTotem_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 7
         y: 0
-        width: 17
-        height: 29
+        width: 19
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: waterTotem_1
       rect:
@@ -75,7 +75,7 @@ TextureImporter:
         width: 19
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

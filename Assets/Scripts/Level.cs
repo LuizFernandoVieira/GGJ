@@ -43,8 +43,6 @@ public class Level : MonoBehaviour {
     {
         GameObject clone = Instantiate (waterTotem, player.transform.position, Quaternion.identity) as GameObject;
         GameObject.Destroy(clone, 5);
-        // GameObject fireTotem = fireTotems[0];
-        // GameObject.DestroyImmediate(fireTotem, true);
     }
     
     public void AddEarthTotem()

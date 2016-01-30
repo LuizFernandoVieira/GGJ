@@ -71,7 +71,7 @@ public class Player : GameActor {
         canJump  = (distanceDL <= 0.01f) || (distanceDR <= 0.01f);
         canTotem = (distanceD  <= 0.01f);
         
-        Debug.Log("Can totem: " + canTotem);
+        // Debug.Log("Can totem: " + canTotem);
         
         SetAnimation();
         
