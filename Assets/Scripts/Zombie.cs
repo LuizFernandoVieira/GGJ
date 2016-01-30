@@ -30,32 +30,16 @@ public class Zombie : MonoBehaviour {
         hitR = Physics2D.Raycast(vectorR  , Vector2.right);
         hitL = Physics2D.Raycast(vectorL  , Vector2.left );
         
-        bool ignore = false;
-        
-        if (hitR.collider != null && hitR.collider.attachedRigidbody != null)
-        {
-            if(hitR.collider.attachedRigidbody.name == "Player") {
-                ignore = true;
-            }
-        }
-
-        if (hitL.collider != null && hitL.collider.attachedRigidbody != null)
-        {
-            if(hitL.collider.attachedRigidbody.name == "Player") {
-                ignore = true;
-            }
-        }
-
         distanceR  = Mathf.Abs(hitR.point.x  - vectorR.x);
         distanceL  = Mathf.Abs(hitL.point.x  - vectorL.x);
 
-	    if (distanceR <= 0.01f && !ignore) {
+	    if (distanceR <= 0.01f) {
             currentFacing = false;
             changeFacing = true;
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
         
-        if (distanceL <= 0.01f && !ignore) {
+        if (distanceL <= 0.01f) {
             currentFacing = true;
             changeFacing = true;
             transform.Translate(Vector3.right * speed * Time.deltaTime);
