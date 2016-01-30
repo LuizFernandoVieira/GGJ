@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameActor : MonoBehaviour {
+public abstract class GameActor : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public abstract void MoveRight();
+    
+    public abstract void MoveLeft();
+
+	public abstract void Jump();
+    
+    public abstract void FireTotem();
+    
+    public abstract void WaterTotem();
+    
+    public abstract void EarthTotem();
+    
+    public abstract void AirTotem();
 }

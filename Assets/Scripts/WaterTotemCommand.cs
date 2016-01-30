@@ -1,15 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WaterTotemCommand : MonoBehaviour {
+public class WaterTotemCommand : Command {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public override void Execute(GameActor ga)
+    {
+        ga.WaterTotem();
+    }
+    
 }

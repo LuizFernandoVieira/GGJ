@@ -1,15 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class JumpCommand : MonoBehaviour {
+public class JumpCommand : Command {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public override void Execute(GameActor ga)
+    {
+        ga.Jump();
+    }
+    
 }

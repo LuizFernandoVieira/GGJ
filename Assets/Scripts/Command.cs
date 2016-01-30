@@ -1,15 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Command : MonoBehaviour {
+public abstract class Command {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public abstract void Execute(GameActor ga);
+    
 }

@@ -1,15 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveCommand : MonoBehaviour {
+public class MoveCommand : Command {
+    
+    bool moveRight = false;
+    
+    public MoveCommand(int num)
+    {
+        if (num == 1)
+        {
+            moveRight = true;
+        }
+    }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public override void Execute(GameActor ga)
+    {
+        if(moveRight)
+        {
+            ga.MoveRight();
+        }
+        else
+        {
+            ga.MoveLeft();    
+        }
+    }
 }
