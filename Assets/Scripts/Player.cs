@@ -119,7 +119,7 @@ public class Player : GameActor {
     {    
         Debug.Log("MoveRight");
         
-        if(distanceR <= 0.01f)
+        if(distanceR <= 0.01f && hitR.collider.name != "Zombie(Clone)")
         {
             speed = 0f;
         }
@@ -135,7 +135,7 @@ public class Player : GameActor {
     {
         Debug.Log("MoveLeft");
         
-        if(distanceL <= 0.01f)
+        if(distanceL <= 0.01f && hitL.collider.name != "Zombie(Clone)")
         {
             speed = 0f;
         }
