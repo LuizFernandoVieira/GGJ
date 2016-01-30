@@ -147,7 +147,7 @@ public class Player : GameActor {
         Debug.Log("Jump");
         if(canJump)
         {
-            rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, 7), ForceMode2D.Impulse);
             canJump = false;
             canTotem = false;
         }
