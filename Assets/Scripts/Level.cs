@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Level : MonoBehaviour {
     
-    GameObject player;
+    private GameObject player;
     
     public GameObject fireTotem;
     public GameObject waterTotem;

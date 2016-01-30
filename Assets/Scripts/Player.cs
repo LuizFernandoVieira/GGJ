@@ -8,6 +8,13 @@ public class Player : GameActor {
     
     Rigidbody2D rb;
     
+    RaycastHit2D hitL;
+    RaycastHit2D hitR;
+    
+    float distanceRight;
+    float distanceLeft;
+    float speed = 3f;
+    
     bool canJump  = false;
     bool canTotem = false;
 
@@ -26,18 +33,47 @@ public class Player : GameActor {
         {
             command.Execute(this);
         }
+
+        Vector2 vectorRight = new Vector2(transform.position.x+0.17f, transform.position.y);
+        Vector2 vectorLeft  = new Vector2(transform.position.x-0.17f, transform.position.y);
+        
+        hitR = Physics2D.Raycast(vectorRight, Vector2.right);
+        hitL = Physics2D.Raycast(vectorLeft , Vector2.left );
+            
+        distanceRight = Mathf.Abs(hitR.point.x - vectorRight.x);
+        distanceLeft  = Mathf.Abs(hitL.point.x - vectorLeft.x );            
     }
     
      public override void MoveRight() 
     {    
-         Debug.Log("MoveRight");
-         transform.Translate(Vector3.right * 3 * Time.deltaTime);              
+        Debug.Log("MoveRight");
+        
+        if(distanceRight <= 0.01f)
+        {
+            speed = 0f;
+        }
+        else
+        {
+            speed = 3f;
+        }
+        
+         transform.Translate(Vector3.right * speed * Time.deltaTime);     
     }
     
     public override void MoveLeft()
     {
         Debug.Log("MoveLeft");
-        transform.Translate(-Vector3.right * 3 * Time.deltaTime);
+        
+        if(distanceLeft <= 0.01f)
+        {
+            speed = 0f;
+        }
+        else
+        {
+            speed = 3f;
+        }
+        
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
     
     public override void Jump()
