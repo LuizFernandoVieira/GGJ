@@ -11,10 +11,14 @@ public class Level : MonoBehaviour {
     public GameObject earthTotem;
     public GameObject airTotem;
     
+    public GameObject zombie;
+    
     // List<GameObject> fireTotems     = new List<GameObject>();
     // List<GameObject> waterTotems    = new List<GameObject>();
     // List<GameObject> earthTotems    = new List<GameObject>();
     // List<GameObject> airTotems      = new List<GameObject>();
+    
+    List<GameObject> zombies        = new List<GameObject>();
     
     public void Awake()
     {
@@ -23,12 +27,10 @@ public class Level : MonoBehaviour {
 
 	public void Start () 
     {
-        
 	}
 	
 	public void Update () 
     {
-	
 	}
     
     public void AddFireTotem()
