@@ -117,7 +117,7 @@ public class Player : GameActor {
     
     public override void MoveRight() 
     {    
-        if(distanceR <= 0.01f)
+        if(distanceR <= 0.01f && hitR.collider.name != "Zombie(Clone)")
         {
             if(hitR.collider.name != "EarthTotem(Clone)")
             {
@@ -134,7 +134,8 @@ public class Player : GameActor {
     
     public override void MoveLeft()
     {
-        if(distanceL <= 0.01f)
+        
+        if(distanceL <= 0.01f && hitL.collider.name != "Zombie(Clone)")
         {
             if(hitL.collider.name != "EarthTotem(Clone)")
             {

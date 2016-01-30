@@ -33,13 +33,13 @@ public class Zombie : MonoBehaviour {
         distanceR  = Mathf.Abs(hitR.point.x  - vectorR.x);
         distanceL  = Mathf.Abs(hitL.point.x  - vectorL.x);
 
-	    if (distanceR <= 0.01f) {
+	    if (distanceR <= 0.01f && hitR.collider.name != "Player") {
             currentFacing = false;
             changeFacing = true;
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
         
-        if (distanceL <= 0.01f) {
+        if (distanceL <= 0.01f && hitL.collider.name != "Player") {
             currentFacing = true;
             changeFacing = true;
             transform.Translate(Vector3.right * speed * Time.deltaTime);
