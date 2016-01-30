@@ -50,11 +50,11 @@ public class Player : GameActor {
             command.Execute(this);
         }
 
-        Vector2 vectorR  = new Vector2(transform.position.x+0.17f, transform.position.y);
-        Vector2 vectorL  = new Vector2(transform.position.x-0.17f, transform.position.y);
+        Vector2 vectorR  = new Vector2(transform.position.x+0.13f, transform.position.y);
+        Vector2 vectorL  = new Vector2(transform.position.x-0.13f, transform.position.y);
         Vector2 vectorD  = new Vector2(transform.position.x      , transform.position.y-0.17f);
-        Vector2 vectorDL = new Vector2(transform.position.x-0.16f, transform.position.y-0.17f);
-        Vector2 vectorDR = new Vector2(transform.position.x+0.16f, transform.position.y-0.17f);
+        Vector2 vectorDL = new Vector2(transform.position.x-0.12f, transform.position.y-0.17f);
+        Vector2 vectorDR = new Vector2(transform.position.x+0.12f, transform.position.y-0.17f);
         
         hitR = Physics2D.Raycast(vectorR  , Vector2.right);
         hitL = Physics2D.Raycast(vectorL  , Vector2.left );
