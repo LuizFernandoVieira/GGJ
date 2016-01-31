@@ -5,23 +5,56 @@ public class Spawner : MonoBehaviour {
     
     public GameObject[] enemies;
     public Transform[] enemiesSpawnLocations;
+    public Transform[] saplinSpawnLocations;
+    private GameObject saplinClone;
     
     public GameObject saplin;
     
-    public Transform[] saplinSpawnLocations;
-    private GameObject saplinClone;
-   
+    private int spawnIndex = 0;
+    
+    private float spawnTimer = 3f;
+    
+    private float currentTimer = 0f;
+    
+    private int spawnCounter = 0;
+    
+    private int spawnChangeTime = 10;
+    
+    private float spawnTimerOffset = 0.5f;
+	
 	void Start () {
         Invoke("CreateZombie", 1);
         InitSaplin();
         InvokeRepeating("ChangeSaplinPosition", 3, 20);
 	}
     
-    void CreateZombie() 
-    {
-        GameObject clone = Instantiate(enemies[0], enemiesSpawnLocations[0].position, Quaternion.identity) as GameObject;
-    }
+	// Update is called once per frame
+	void Update () {
+        currentTimer += Time.deltaTime;
+        
+        if (currentTimer >= spawnTimer) {
+            
+            if (spawnCounter > spawnChangeTime) {
+                spawnTimer -= spawnTimerOffset;
+                spawnCounter = 0;
+            }
+            
+            currentTimer = 0;
+            
+            Random.seed = (int) System.Environment.TickCount;
+            
+            spawnIndex = Random.Range(0, 5);
+            
+            CreateZombie(spawnIndex);
+            
+            spawnCounter++;
+        }
+	}
     
+    void CreateZombie(int index) {
+        GameObject clone = Instantiate(enemies[0], enemiesSpawnLocations[index].position, Quaternion.identity) as GameObject;
+    }
+
     void InitSaplin()
     {   
         saplinClone = Instantiate(saplin, saplinSpawnLocations[0].position, Quaternion.identity) as GameObject;
