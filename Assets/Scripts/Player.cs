@@ -119,7 +119,9 @@ public class Player : GameActor {
     {    
         if(distanceR <= 0.01f && hitR.collider.name != "Zombie(Clone)")
         {
-            if(hitR.collider.name != "EarthTotem(Clone)")
+            if( hitR.collider.name != "EarthTotem(Clone)" && 
+                hitR.collider.name != "AirTotem(Clone)"   &&
+                hitR.collider.name != "WaterTotem(Clone)")
             {
                 speed = 0f;
             }
@@ -137,7 +139,9 @@ public class Player : GameActor {
         
         if(distanceL <= 0.01f && hitL.collider.name != "Zombie(Clone)")
         {
-            if(hitL.collider.name != "EarthTotem(Clone)")
+            if( hitL.collider.name != "EarthTotem(Clone)" && 
+                hitL.collider.name != "AirTotem(Clone)"   &&
+                hitL.collider.name != "WaterTotem(Clone)")
             {
                 speed = 0f;
             }

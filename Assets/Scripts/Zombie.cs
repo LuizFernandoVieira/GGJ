@@ -33,13 +33,21 @@ public class Zombie : MonoBehaviour {
         distanceR  = Mathf.Abs(hitR.point.x  - vectorR.x);
         distanceL  = Mathf.Abs(hitL.point.x  - vectorL.x);
 
-	    if (distanceR <= 0.01f && hitR.collider.name != "Player") {
+	    if (distanceR <= 0.01f && hitR.collider.name != "Player" && hitR.collider.name != "AirTotem(Clone)") {
+            if(hitR.collider.name == "Whirlwind(Clone)")
+            {
+                Destroy(gameObject);
+            }
             currentFacing = false;
             changeFacing = true;
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
         
-        if (distanceL <= 0.01f && hitL.collider.name != "Player") {
+        if (distanceL <= 0.01f && hitL.collider.name != "Player" && hitL.collider.name != "AirTotem(Clone)") {
+            if(hitR.collider.name == "Whirlwind(Clone)")
+            {
+                Destroy(gameObject);
+            }
             currentFacing = true;
             changeFacing = true;
             transform.Translate(Vector3.right * speed * Time.deltaTime);
