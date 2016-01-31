@@ -43,7 +43,7 @@ public class Zombie : MonoBehaviour {
             transform.Translate(Vector3.left * speed * Time.deltaTime);
         }
         
-        if (distanceL <= 0.01f && hitL.collider.name != "Player" && hitL.collider.name != "AirTotem(Clone)" && hitR.collider.name != "FireTotem(Clone)") {
+        if (distanceL <= 0.01f && hitL.collider.name != "Player" && hitL.collider.name != "AirTotem(Clone)" && hitL.collider.name != "FireTotem(Clone)") {
             if(hitR.collider.name == "Whirlwind(Clone)")
             {
                 Destroy(gameObject);
