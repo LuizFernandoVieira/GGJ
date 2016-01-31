@@ -19,8 +19,8 @@ public class Player : GameActor {
     float distanceD;
     float distanceDL;
     float distanceDR;
+    
     float speed = 3f;
-    float maxGravity = 15f;
     
     bool canJump  = false;
     bool canTotem = false;
@@ -121,7 +121,8 @@ public class Player : GameActor {
         {
             if( hitR.collider.name != "EarthTotem(Clone)" && 
                 hitR.collider.name != "AirTotem(Clone)"   &&
-                hitR.collider.name != "WaterTotem(Clone)")
+                hitR.collider.name != "WaterTotem(Clone)" &&
+                hitR.collider.name != "RightTeleport")
             {
                 speed = 0f;
             }
@@ -141,7 +142,8 @@ public class Player : GameActor {
         {
             if( hitL.collider.name != "EarthTotem(Clone)" && 
                 hitL.collider.name != "AirTotem(Clone)"   &&
-                hitL.collider.name != "WaterTotem(Clone)")
+                hitL.collider.name != "WaterTotem(Clone)" &&
+                hitL.collider.name != "LeftTeleport")
             {
                 speed = 0f;
             }
