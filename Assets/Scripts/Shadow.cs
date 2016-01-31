@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Zombie : MonoBehaviour {
-
+public class Shadow : MonoBehaviour {
     public GameObject saplin;
     
     private SpriteRenderer spriteRenderer;
@@ -121,4 +120,5 @@ public class Zombie : MonoBehaviour {
             canJump = false;
         }
     }
+
 }
