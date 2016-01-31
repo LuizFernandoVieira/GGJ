@@ -8,7 +8,10 @@ public class RightTeleport : MonoBehaviour {
         if(other.gameObject.tag == "Player")
         {
             GameObject player = GameObject.Find("Player");
-            player.transform.position = new Vector2(-3.04f, 0f);
+            if(player != null)
+            {
+                player.transform.position = new Vector2(-3.04f, 0f);
+            }
         }   
     }
 
