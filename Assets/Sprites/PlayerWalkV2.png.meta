@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 988f73f909c084f76bd42823bf0d0eba
-timeCreated: 1454245055
+guid: b65780981a25d40c9a0a87bf3684244a
+timeCreated: 1454247257
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -62,9 +62,9 @@ TextureImporter:
     - name: PlayerWalkV2_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 8
         y: 0
-        width: 32
+        width: 17
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -72,9 +72,9 @@ TextureImporter:
     - name: PlayerWalkV2_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 37
         y: 0
-        width: 32
+        width: 21
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -82,9 +82,9 @@ TextureImporter:
     - name: PlayerWalkV2_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 70
         y: 0
-        width: 32
+        width: 19
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -92,9 +92,9 @@ TextureImporter:
     - name: PlayerWalkV2_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 104
         y: 0
-        width: 32
+        width: 17
         height: 32
       alignment: 0
       pivot: {x: .5, y: .5}
