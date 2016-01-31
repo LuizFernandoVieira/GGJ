@@ -53,9 +53,6 @@ public class Zombie : MonoBehaviour {
         distanceR  = Mathf.Abs(hitR.point.x  - vectorR.x);
         distanceL  = Mathf.Abs(hitL.point.x  - vectorL.x);
         
-        Debug.Log("dr: " + distanceR);
-        Debug.Log("dl: " + distanceL);
-        
 	    if (distanceR <= 0.01f && 
                 hitR.collider.name != "Player" && 
                 hitR.collider.name != "AirTotem(Clone)" && 
