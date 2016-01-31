@@ -3,20 +3,46 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour {
     
-    public Transform[] spawnLocations;
+    public GameObject[] enemies;
+    public Transform[] enemiesSpawnLocations;
     
-    public GameObject[] prefabs;
+    public GameObject saplin;
     
-	// Use this for initialization
+    public Transform[] saplinSpawnLocations;
+    private GameObject saplinClone;
+   
 	void Start () {
         Invoke("CreateZombie", 1);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        InitSaplin();
+        InvokeRepeating("ChangeSaplinPosition", 3, 20);
 	}
     
-    void CreateZombie() {
-        GameObject clone = Instantiate(prefabs[0], spawnLocations[0].position, Quaternion.identity) as GameObject;
+    void CreateZombie() 
+    {
+        GameObject clone = Instantiate(enemies[0], enemiesSpawnLocations[0].position, Quaternion.identity) as GameObject;
+    }
+    
+    void InitSaplin()
+    {   
+        saplinClone = Instantiate(saplin, saplinSpawnLocations[0].position, Quaternion.identity) as GameObject;
+    }
+    
+    void ChangeSaplinPosition()
+    {
+        for (int i = 0; i < saplinSpawnLocations.Length; i++)
+        {            
+            if(saplinClone.transform.position == saplinSpawnLocations[i].position)
+            {
+                int n = ++i;
+                if(i < saplinSpawnLocations.Length)
+                {
+                    saplinClone.transform.position = saplinSpawnLocations[n].position;
+                }
+                else
+                {
+                    saplinClone.transform.position = saplinSpawnLocations[0].position;
+                }
+            }
+        }
     }
 }

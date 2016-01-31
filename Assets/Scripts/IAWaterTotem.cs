@@ -15,4 +15,12 @@ public class IAWaterTotem : MonoBehaviour {
         GameObject.Destroy(clone, 1);
         Destroy(gameObject);
     }
+    
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Destroy(other.gameObject);
+        }
+    }    
 }

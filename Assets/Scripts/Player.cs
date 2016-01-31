@@ -20,6 +20,7 @@ public class Player : GameActor {
     float distanceDL;
     float distanceDR;
     
+    public float initSpeed = 3f;
     float speed = 3f;
     
     bool canJump  = false;
@@ -129,7 +130,7 @@ public class Player : GameActor {
         }
         else
         {
-            speed = 3f;
+            speed = initSpeed;
         }
         
          transform.Translate(Vector3.right * speed * Time.deltaTime);     
@@ -150,7 +151,7 @@ public class Player : GameActor {
         }
         else
         {
-            speed = 3f;
+            speed = initSpeed;
         }
         
         transform.Translate(Vector3.left * speed * Time.deltaTime);
