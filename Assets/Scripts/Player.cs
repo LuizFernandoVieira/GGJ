@@ -118,19 +118,23 @@ public class Player : GameActor {
     
     public override void MoveRight() 
     {    
-        if(distanceR <= 0.01f && hitR.collider.name != "Zombie(Clone)")
+        if(hitR.collider != null)
         {
-            if( hitR.collider.name != "EarthTotem(Clone)" && 
-                hitR.collider.name != "AirTotem(Clone)"   &&
-                hitR.collider.name != "WaterTotem(Clone)" &&
-                hitR.collider.name != "RightTeleport")
+            if(distanceR <= 0.01f && hitR.collider.name != "Zombie(Clone)")
             {
-                speed = 0f;
+                    if( hitR.collider.name != "EarthTotem(Clone)" && 
+                        hitR.collider.name != "AirTotem(Clone)"   &&
+                        hitR.collider.name != "WaterTotem(Clone)" &&
+                        hitR.collider.name != "FireTotem(Clone)" &&
+                        hitR.collider.name != "RightTeleport")
+                    {
+                        speed = 0f;
+                    }      
             }
-        }
-        else
-        {
-            speed = initSpeed;
+            else
+            {
+                speed = initSpeed;
+            }
         }
         
          transform.Translate(Vector3.right * speed * Time.deltaTime);     
@@ -138,20 +142,23 @@ public class Player : GameActor {
     
     public override void MoveLeft()
     {
-        
-        if(distanceL <= 0.01f && hitL.collider.name != "Zombie(Clone)")
+        if(hitL.collider != null)
         {
-            if( hitL.collider.name != "EarthTotem(Clone)" && 
-                hitL.collider.name != "AirTotem(Clone)"   &&
-                hitL.collider.name != "WaterTotem(Clone)" &&
-                hitL.collider.name != "LeftTeleport")
+            if(distanceL <= 0.01f && hitL.collider.name != "Zombie(Clone)")
             {
-                speed = 0f;
+                if( hitL.collider.name != "EarthTotem(Clone)" && 
+                    hitL.collider.name != "AirTotem(Clone)"   &&
+                    hitL.collider.name != "WaterTotem(Clone)" &&
+                    hitL.collider.name != "FireTotem(Clone)" &&
+                    hitL.collider.name != "LeftTeleport")
+                {
+                    speed = 0f;
+                }
             }
-        }
-        else
-        {
-            speed = initSpeed;
+            else
+            {
+                speed = initSpeed;
+            }
         }
         
         transform.Translate(Vector3.left * speed * Time.deltaTime);
