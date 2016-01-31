@@ -3,9 +3,13 @@ using System.Collections;
 
 public class Zombie : MonoBehaviour {
 
+    public GameObject saplin;
+    
     private SpriteRenderer spriteRenderer;
 
     bool currentFacing = true;
+    
+    bool goUp = false;
     
     RaycastHit2D hitL;
     RaycastHit2D hitR;
@@ -21,6 +25,7 @@ public class Zombie : MonoBehaviour {
         spriteRenderer = GetComponent<SpriteRenderer>();
         GameObject player = GameObject.Find("Player");
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        saplin = GameObject.Find("Saplin");
     }
 	
 	// Update is called once per frame
