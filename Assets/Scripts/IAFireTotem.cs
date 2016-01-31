@@ -7,12 +7,14 @@ public class IAFireTotem : MonoBehaviour {
     
     void CreateFireBallRight()
     {   
-        GameObject clone = Instantiate (fireBall, this.transform.position, Quaternion.identity) as GameObject;   
+        GameObject clone = Instantiate (fireBall, this.transform.position, Quaternion.identity) as GameObject;
+        clone.GetComponent<FireBall>().facingRight = true;   
     }
     
     void CreateFireBallLeft()
     {   
-        GameObject clone = Instantiate (fireBall, this.transform.position, Quaternion.AngleAxis(180, Vector3.up)) as GameObject;   
+        GameObject clone = Instantiate (fireBall, this.transform.position, Quaternion.AngleAxis(180, Vector3.up)) as GameObject;
+        clone.GetComponent<FireBall>().facingRight = false;
     }
 
 	void OnTriggerEnter2D(Collider2D other)

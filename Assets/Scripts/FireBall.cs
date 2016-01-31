@@ -2,8 +2,16 @@
 using System.Collections;
 
 public class FireBall : MonoBehaviour {
+    
+    public float speed = 3;
+    public bool facingRight = false;
+    
+    void Update()
+    {
+        transform.Translate(Vector3.right * speed * Time.deltaTime); 
+    }
 
-	void OnCollisionEnter2D(Collision2D other)
+	void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
