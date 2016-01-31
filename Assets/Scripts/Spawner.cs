@@ -10,18 +10,14 @@ public class Spawner : MonoBehaviour {
     
     public GameObject saplin;
     
-    private int spawnIndex = 0;
-    
-    private float spawnTimer = 3f;
+    private float spawnTimer = 10f;
     
     private float currentTimer = 0f;
     
-    private int spawnCounter = 0;
-    
     private int spawnChangeTime = 10;
     
-    private float spawnTimerOffset = 0.5f;
-	
+    private int enemyCounter = 0;
+    
 	void Start () {
         Invoke("CreateZombie", 1);
         InitSaplin();
@@ -34,25 +30,23 @@ public class Spawner : MonoBehaviour {
         
         if (currentTimer >= spawnTimer) {
             
-            if (spawnCounter > spawnChangeTime) {
-                spawnTimer -= spawnTimerOffset;
-                spawnCounter = 0;
-            }
-            
             currentTimer = 0;
             
             Random.seed = (int) System.Environment.TickCount;
             
-            spawnIndex = Random.Range(0, 5);
+            int spawnIndex = Random.Range(0, 5);
             
-            CreateZombie(spawnIndex);
+            int enemyIndex = Random.Range(0, 3);
             
-            spawnCounter++;
+            Debug.Log("enemy: " + enemyIndex);
+            
+            CreateEnemy(spawnIndex, enemyIndex);
         }
 	}
     
-    void CreateZombie(int index) {
-        GameObject clone = Instantiate(enemies[0], enemiesSpawnLocations[index].position, Quaternion.identity) as GameObject;
+    void CreateEnemy(int spawn, int enemy) {
+        GameObject clone = Instantiate(enemies[enemy], enemiesSpawnLocations[spawn].position, Quaternion.identity) as GameObject;
+        enemyCounter++;
     }
 
     void InitSaplin()
