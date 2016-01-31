@@ -26,26 +26,38 @@ public class Level : MonoBehaviour {
     
     public void AddFireTotem()
     {
-        GameObject clone = Instantiate (fireTotem, player.transform.position, Quaternion.identity) as GameObject;
-        GameObject.Destroy(clone, 5);
+        if (player != null)
+        {
+            GameObject clone = Instantiate (fireTotem, player.transform.position, Quaternion.identity) as GameObject;
+            GameObject.Destroy(clone, 5);     
+        }
     }
     
     public void AddWaterTotem()
     {
-        GameObject clone = Instantiate (waterTotem, player.transform.position, Quaternion.identity) as GameObject;
-        GameObject.Destroy(clone, 5);
+        if (player != null)
+        {
+            GameObject clone = Instantiate (waterTotem, player.transform.position, Quaternion.identity) as GameObject;
+            GameObject.Destroy(clone, 5);
+        }
     }
     
     public void AddEarthTotem()
     {
-        GameObject clone = Instantiate (earthTotem, player.transform.position, Quaternion.identity) as GameObject;
-        GameObject.Destroy(clone, 5);
+        if (player != null)
+        {        
+            GameObject clone = Instantiate (earthTotem, player.transform.position, Quaternion.identity) as GameObject;
+            GameObject.Destroy(clone, 5);
+        } 
     }
     
     public void AddAirTotem()
     {
-        GameObject clone = Instantiate (airTotem, player.transform.position, Quaternion.identity) as GameObject;
-        GameObject.Destroy(clone, 5);
+        if (player != null)
+        {        
+            GameObject clone = Instantiate (airTotem, player.transform.position, Quaternion.identity) as GameObject;
+            GameObject.Destroy(clone, 5);
+        }
     }
     
 }
